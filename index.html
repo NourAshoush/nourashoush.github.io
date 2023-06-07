@@ -1,50 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/homepage.css">
-    <script src="js/script.js" defer></script>
-    <title>Homepage</title>
-  </head>
-  <body>
-    <div class="welcome_elements">
-        <div class="welcome_banner">
-            <div class="welcome_messages">
-                <h1>Hello! My name is</h1>
-                <h1 style="font-weight: 500;">Nour Ashoush</h1>
-                <p>
-                    I'm a second year Computer Science and<br>
-                    Software Engineering student at the<br>
-                    University of Birmingham
-                </p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/homepage.css" />
+        <script src="js/homepage.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <title>Homepage</title>
+    </head>
+    <body>
+        <section class="welcome_elements reveal">
+            <div class="welcome_banner">
+                <div class="welcome_messages">
+                    <h1>Hello! My name is</h1>
+                    <h1 style="font-weight: 500; font-size: 2.5rem;">Nour Ashoush</h1>
+                    <p>
+                        I'm a second year Computer Science and<br>
+                        Software Engineering student at the<br>
+                        University of Birmingham
+                    </p>
+                </div>
+                
+                <img src="assets/MyPicture.jpg" alt="Welcome Image" class="welcome_image">
             </div>
             
-            <img src="assets/MyPicture.jpg" alt="Welcome Image" class="welcome_image">
-        </div>
+            <div class="go_down reveal"> <div class="down-arrow"></div> </div>
+        </section>
 
-    </div>
+        <div class="spacing"></div>
 
-    <div class="go_down">
-        <div class="down-arrow"></div>        
-    </div>
-
-    <div class="spacing"></div>
-
-    <div>
-        <div class="about_me">
+        <section class="about_me reveal">
             <h1>About Me</h1>
             <p style="padding: 0 20%;" align="justify">
                 I am currently a second year Computer Science and Software Engineering student
-                 at the University of Birmingham. I am a hardworking and dedicated 
-                 individual who is always looking to learn new skills and improve my
-                 knowledge. I am a team player and I am always looking to help others. I am a very organised person and I am able to manage my time effectively. I am a very friendly person and I am always looking to meet new people and make new friends.
+                at the University of Birmingham. I am a hardworking and dedicated 
+                individual who is always looking to learn new skills and improve my
+                knowledge. I am a team player and I am always looking to help others. I am a very organised person and I am able to manage my time effectively. I am a very friendly person and I am always looking to meet new people and make new friends.
             </p>
-        </div>
-    </div>
+        </section>
 
-  </body>
+        <div class="spacing"></div>
+
+        <section class="about_me reveal">
+            <h1>My Studies</h1>
+            <p style="padding: 0 20%;" align="justify">
+                I am currently a second year Computer Science and Software Engineering student
+                at the University of Birmingham. I am a hardworking and dedicated 
+                individual who is always looking to learn new skills and improve my
+                knowledge. I am a team player and I am always looking to help others. I am a very organised person and I am able to manage my time effectively. I am a very friendly person and I am always looking to meet new people and make new friends.
+            </p>
+        </section>
+
+        <div class="spacing"></div>
+
+
+        <footer>
+            <div><p style="font-style: italic; font-size: medium;">Designed and Developed by Nour Ashoush</p></div>
+            <div class="footer_socials">
+                <a href="mailto:nour.bsm.ashoush@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/nour-b-ashoush/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/NourAshoush"><i class="fab fa-github"></i></a>
+            </div>
+        </footer>
+
+    </body>
 </html>
