@@ -1,37 +1,42 @@
 div {
-    border: red dashed 0px;
+  border: red dashed 0px;
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.4rem;
-    line-height: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
 }
 
 html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
 
 }
 
 h1, h2, h3, p {
-    font-weight: 300;
+  font-weight: 300;
+}
+
+.bold {
+  font-weight: 500;
+  font-size: 2.5rem;
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .spacing {
-    height: 40%;
+  height: 40%;
 }
 
 .reveal {
   opacity: 0;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
 }
 
 .reveal.active {
-    opacity: 1;
+  opacity: 1;
 }

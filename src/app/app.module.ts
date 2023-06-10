@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { WelcomeMessageComponent } from './homepage/welcome-message/welcome-message.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FooterComponent } from './footer/footer.component';
+import { TechSkillsComponent } from './homepage/tech-skills/tech-skills.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeMessageComponent,
     HomepageComponent,
-    FooterComponent
+    FooterComponent,
+    TechSkillsComponent
   ],
   imports: [
     BrowserModule,

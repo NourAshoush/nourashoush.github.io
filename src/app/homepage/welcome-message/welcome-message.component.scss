@@ -55,13 +55,6 @@
 	transform: rotateZ(45deg);
 }
 
-.about_me {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
 @keyframes jumpInfinite {
 	0% {
 		margin-top: 0;

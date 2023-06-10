@@ -1,0 +1,51 @@
+.pad-left {
+  padding-left: 10%;
+}
+
+.language-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .fab {
+    font-size: 3rem;
+    padding: 0 13px;
+  }
+
+}
+
+//.fa-python {
+//  background: linear-gradient(148deg, rgb(52, 116, 168) 0%, rgb(52, 116, 168) 47%, rgb(255, 215, 71) 53%, rgb(255, 215, 71) 100%);
+//  -webkit-background-clip: text;
+//  -webkit-text-fill-color: transparent;
+//}
+
+.fa-java {
+  background: linear-gradient(180deg, rgba(210, 147, 45, 1) 0%, rgba(210, 147, 45, 1) 55%, rgba(55, 102, 132, 1) 55%, rgba(55, 102, 132, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+//
+//.fa-c {
+//  border-radius: 30%;
+//  color: white;
+//  background: linear-gradient(145deg, rgb(84, 138, 196) 0%, rgb(84, 138, 196) 55%, rgb(0, 75, 139) 55%, rgb(0, 75, 139) 100%);
+//}
+
+.fa-square-js {
+  background: linear-gradient(90deg, rgb(248, 211, 28) 0%, rgb(224, 189, 20) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-html5 {
+  background: linear-gradient(90deg, rgb(219, 65, 30) 0%, rgb(219, 65, 30) 50%, rgb(241, 97, 52) 50%, rgb(241, 97, 52) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-css3-alt {
+  background: linear-gradient(90deg, rgb(0, 97, 170) 0%, rgb(0, 97, 170) 50%, rgb(47, 141, 206) 50%, rgb(47, 141, 206) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
