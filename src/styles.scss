@@ -17,7 +17,7 @@ html, body {
 
 }
 
-h1, h2, h3, p {
+h1, h2, h3, p, span {
   font-weight: 300;
 
   -webkit-touch-callout: none;
@@ -25,7 +25,6 @@ h1, h2, h3, p {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-
 }
 
 .bold {
@@ -39,6 +38,15 @@ h1, h2, h3, p {
 
 .spacing {
   height: 30%;
+}
+
+.unselectable {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+  cursor: default;
 }
 
 .reveal {

@@ -10,15 +10,12 @@ export class HomepageComponent implements OnInit, OnDestroy {
   ngOnInit() {
     window.addEventListener('scroll', this.updateProgressBar.bind(this));
     window.addEventListener('mousemove', this.handleBarHover.bind(this));
-    // window.addEventListener('mousemove', this.handleCheckpointHover.bind(this));
     this.setCheckPointHeight();
   }
 
   ngOnDestroy() {
     window.removeEventListener('scroll', this.updateProgressBar.bind(this));
     window.removeEventListener('mousemove', this.handleBarHover.bind(this));
-    // window.removeEventListener('mousemove', this.handleCheckpointHover.bind(this));
-
   }
 
   private updateProgressBar(): void {
@@ -30,33 +27,16 @@ export class HomepageComponent implements OnInit, OnDestroy {
 
   private setCheckPointHeight(): void {
     const {scrollHeight} = document.documentElement;
-    const tech_skills_element = document.querySelector('#tech_skills_element') as HTMLElement;
-    const tech_skills_checkpoint = document.querySelector('#tech_skills_checkpoint') as HTMLElement;
-    const heightPercent = `${(tech_skills_element.offsetTop / (scrollHeight - window.innerHeight) * 100)-1}%`
-    tech_skills_checkpoint.style.setProperty('--heightOffset', heightPercent);
-  }
+    const pageElements = document.querySelectorAll('.element');
+    const pageCheckpoints = document.querySelectorAll('.checkpoint');
 
-  // private handleCheckpointHover(event: MouseEvent): void {
-  //   const checkpointElements = document.querySelectorAll('.checkpoint');
-  //   const progressBarElement = document.querySelector('.progress-bar') as HTMLElement;
-  //   const progressGhostElement = document.querySelector('.progress-bar-ghost') as HTMLElement;
-  //
-  //   for (let i = 0; i < checkpointElements.length; i++) {
-  //     const checkpointElement = checkpointElements[i] as HTMLElement;
-  //     const rect = checkpointElement.getBoundingClientRect();
-  //     const isInVicinity = Math.abs(event.clientX - rect.left) <= 30 && Math.abs(event.clientY - rect.bottom) <= 20;
-  //
-  //     if (isInVicinity) {
-  //       checkpointElement.classList.add('hoverPoint');
-  //       progressBarElement.classList.add('hoverBar');
-  //       progressGhostElement.classList.add('hoverBar');
-  //     } else {
-  //       checkpointElement.classList.remove('hoverPoint');
-  //       progressBarElement.classList.remove('hoverBar');
-  //       progressGhostElement.classList.remove('hoverBar');
-  //     }
-  //   }
-  // }
+    for (let i = 0; i < pageElements.length; i++) {
+      const pageElement = pageElements[i] as HTMLElement;
+      const equivCheckpoint = pageCheckpoints[i] as HTMLElement;
+      const heightPercent = `${(pageElement.offsetTop / (scrollHeight - window.innerHeight) * 100) - 1}%`;
+      equivCheckpoint.style.setProperty('--heightOffset', heightPercent);
+    }
+  }
 
   private handleBarHover(event: MouseEvent): void {
     const progressBarElement = document.querySelector('.progress-bar') as HTMLElement;
