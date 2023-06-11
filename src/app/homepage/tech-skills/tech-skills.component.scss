@@ -2,21 +2,23 @@
   padding-left: 10%;
 }
 
-.language-icons {
+.icons-list {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-flow: wrap;
 
   .icon {
     font-size: 3rem;
-    padding: 0 13px;
+    padding: 0 13px 13px;
     transition: all 0.3s ease;
     overflow-wrap: normal;
 
     &:hover {
       opacity: 90%;
       scale: 120%;
-      padding: 0 20px;
+      padding: 0 25px 13px;
       filter: drop-shadow(2px 3px 3px rgba(0, 0, 0, 0.3));
     }
   }
