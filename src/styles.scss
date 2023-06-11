@@ -13,10 +13,19 @@ html, body {
   height: 100%;
   margin: 0;
 
+  scroll-behavior: smooth;
+
 }
 
 h1, h2, h3, p {
   font-weight: 300;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
 }
 
 .bold {
@@ -29,7 +38,7 @@ h1, h2, h3, p {
 }
 
 .spacing {
-  height: 40%;
+  height: 30%;
 }
 
 .reveal {

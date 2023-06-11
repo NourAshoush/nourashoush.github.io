@@ -1,9 +1,67 @@
+$progress-bar-width: 6px;
+
+.progress-bar-ghost {
+  position: fixed;
+  width: $progress-bar-width;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.4);
+  left: 0;
+  transition: width 0.3s ease, transform 0.3s ease;
+}
+
 .progress-bar {
   --progress: 0;
   position: fixed;
-  width: 6px;
+  width: $progress-bar-width;
   height: var(--progress);
   background-color: black;
   left: 0;
-  border-radius: 0 0 3px 3px;
+  border-radius: 0 0 $progress-bar-width/2 $progress-bar-width/2;
+
+  transition: width 0.3s ease, transform 0.3s ease;
+}
+
+.hoverBar {
+  width: $progress-bar-width * 2;
+  transform: translateX(15px);
+}
+
+.checkpoint {
+  position: fixed;
+  width: $progress-bar-width - 2;
+  height: $progress-bar-width - 2;
+  background-color: white;
+  border: black solid 1px;
+  left: 0;
+  border-radius: 50%;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+  //  stuff here
+  }
+
+  &.hoverPoint {
+    width: ($progress-bar-width - 2) * 3;
+    height: ($progress-bar-width - 2) * 3;
+    border: black solid 3px;
+    left: 15px - ($progress-bar-width - 3);
+  }
+}
+
+#tech_skills_checkpoint {
+  --heightOffset: 0;
+  top: var(--heightOffset);
+}
+
+/* Styles for mobile devices */
+@media (max-width: 767px) {
+  .checkpoint, .progress-bar, .progress-bar-ghost {
+    display: none;
+  }
+}
+
+/* Styles for desktop devices */
+@media (min-width: 768px) {
+
 }
