@@ -7,27 +7,32 @@ import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 })
 
 export class HomepageComponent implements OnInit, OnDestroy {
-  pageElements = ["tech_skills", "education"];
+  pageElements = ["tech_skills", "education", "projects"];
 
   ngOnInit() {
     window.addEventListener('scroll', this.updateProgressBar.bind(this));
     window.addEventListener('mousemove', this.handleBarHover.bind(this));
+    window.addEventListener('scroll', this.reveal);
     this.setCheckPointHeights();
+    this.reveal();
   }
 
   ngOnDestroy() {
     window.removeEventListener('scroll', this.updateProgressBar.bind(this));
     window.removeEventListener('mousemove', this.handleBarHover.bind(this));
+    window.removeEventListener('scroll', this.reveal);
   }
 
+  @HostListener('document:fullscreenchange')
   @HostListener('window:resize')
   private updateProgressBar(): void {
     const {scrollTop, scrollHeight} = document.documentElement;
-    const scrollPercent = `${scrollTop / (scrollHeight - window.innerHeight) * 100}%`; //scrollHeight - window.innerHeight
+    const scrollPercent = `${scrollTop / (scrollHeight - window.innerHeight) * 100}%`;
     const progressBar = document.querySelector('.progress-bar') as HTMLElement;
     progressBar.style.setProperty('--progress', scrollPercent);
   }
 
+  @HostListener('document:fullscreenchange')
   @HostListener('window:resize')
   private setCheckPointHeights(): void {
     const {scrollHeight} = document.documentElement;
@@ -35,7 +40,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
     for (let i = 0; i < this.pageElements.length; i++) {
       const pageElement = document.querySelector(`#${this.pageElements[i]}_element`) as HTMLElement;
       const equivCheckpoint = document.querySelector(`#${this.pageElements[i]}_checkpoint`) as HTMLElement;
-      const heightPercent = `${(pageElement.offsetTop / (scrollHeight - window.innerHeight) * 100) - 1}%`; //scrollHeight - window.innerHeight
+      const heightPercent = `${(pageElement.offsetTop / (scrollHeight - window.innerHeight) * 100) - 1}%`;
       equivCheckpoint.style.setProperty('--heightOffset', heightPercent);
     }
   }
@@ -70,6 +75,22 @@ export class HomepageComponent implements OnInit, OnDestroy {
     for (let i = 0; i < checkpointElements.length; i++) {
       const checkpointElement = checkpointElements[i] as HTMLElement;
       checkpointElement.classList.remove('hoverPoint');
+    }
+  }
+
+  public reveal(): void {
+    const reveals = document.querySelectorAll('.reveal');
+
+    for (let i = 0; i < reveals.length; i++) {
+      const windowHeight = window.innerHeight;
+      const elementToReveal = (reveals[i] as HTMLElement).getBoundingClientRect();
+      const revealPoint = 50;
+
+      if (elementToReveal.bottom < windowHeight - revealPoint && elementToReveal.top < windowHeight - revealPoint) {
+        (reveals[i] as HTMLElement).classList.add('active');
+      } else {
+        (reveals[i] as HTMLElement).classList.remove('active');
+      }
     }
   }
 

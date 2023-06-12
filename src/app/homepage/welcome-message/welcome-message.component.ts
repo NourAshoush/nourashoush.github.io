@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-welcome-message',
@@ -6,30 +6,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   styleUrls: ['./welcome-message.component.scss']
 })
 
-export class WelcomeMessageComponent implements OnInit, OnDestroy {
+export class WelcomeMessageComponent {
 
-  ngOnInit() {
-    window.addEventListener('scroll', this.reveal);
-    this.reveal();
-  }
-
-  ngOnDestroy() {
-    window.removeEventListener('scroll', this.reveal);
-  }
-
-  public reveal(): void {
-    const reveals = document.querySelectorAll('.reveal');
-
-    for (let i = 0; i < reveals.length; i++) {
-      const windowHeight = window.innerHeight;
-      const revealTop = (reveals[i] as HTMLElement).getBoundingClientRect().top;
-      const revealPoint = 500;
-
-      if (revealTop < windowHeight - revealPoint) {
-        (reveals[i] as HTMLElement).classList.add('active');
-      } else {
-        (reveals[i] as HTMLElement).classList.remove('active');
-      }
-    }
-  }
 }

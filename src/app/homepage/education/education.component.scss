@@ -3,11 +3,17 @@
   margin-right: 10%;
   overflow: auto;
   height: auto;
-
   display: flex;
 
-  background-color: rgba(169, 169, 169, 0.2);
+  background-color: rgb(243, 243, 243);
   border-radius: 20px;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    scale: 105%;
+    filter: drop-shadow(1px 2px 4px rgba(0, 0, 0, 0.2));
+  }
 }
 
 .academy-logo {

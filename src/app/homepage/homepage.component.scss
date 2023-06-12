@@ -44,7 +44,6 @@ $progress-bar-width: 6px;
   &.hoverPoint {
     width: ($progress-bar-width - 2) * 3;
     height: ($progress-bar-width - 2) * 3;
-    //border: black solid 3px;
     left: 15px - ($progress-bar-width - 5);
     box-shadow: 0 0 0 2px black;
   }
@@ -82,14 +81,9 @@ $progress-bar-width: 6px;
   top: var(--heightOffset);
 }
 
-@media (max-width: 767px) {
-  .checkpoint, .progress-bar, .progress-bar-ghost, .sectionTitle {
-    display: none;
-  }
-}
-
-@media (min-width: 768px) {
-
+#projects_checkpoint {
+  --heightOffset: 0;
+  top: var(--heightOffset);
 }
 
 .go_down {
@@ -133,4 +127,14 @@ $progress-bar-width: 6px;
   100% {
     margin-top: 0;
   }
+}
+
+@media (max-width: 767px) {
+  .checkpoint, .progress-bar, .progress-bar-ghost, .sectionTitle {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+
 }
