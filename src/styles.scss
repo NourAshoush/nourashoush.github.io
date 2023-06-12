@@ -19,12 +19,7 @@ html, body {
 
 h1, h2, h3, p, span {
   font-weight: 300;
-
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  @extend .unselectable;
 }
 
 .bold {
@@ -37,6 +32,7 @@ h1, h2, h3, p, span {
 }
 
 .double-space {
+  @extend .unselectable;
   display: block;
   position: static;
   height: 35%;
@@ -44,6 +40,7 @@ h1, h2, h3, p, span {
 }
 
 .single-space {
+  @extend .unselectable;
   display: block;
   position: static;
   height: 15%;
@@ -56,6 +53,7 @@ h1, h2, h3, p, span {
 
 .unselectable {
   user-select: none;
+  -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

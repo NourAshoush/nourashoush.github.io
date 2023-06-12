@@ -16,14 +16,9 @@ $progress-bar-width: 6px;
   height: var(--progress);
   background-color: black;
   left: 0;
-  border-radius: 0 0 $progress-bar-width/2 $progress-bar-width/2;
+  border-radius: 0 0 calc($progress-bar-width / 2) calc($progress-bar-width / 2);
 
   transition: width 0.3s ease, transform 0.3s ease;
-}
-
-.hoverBar {
-  width: $progress-bar-width * 2;
-  transform: translateX(15px);
 }
 
 .checkpoint {
@@ -130,11 +125,17 @@ $progress-bar-width: 6px;
 }
 
 @media (max-width: 767px) {
-  .checkpoint, .progress-bar, .progress-bar-ghost, .sectionTitle {
+  .checkpoint, .sectionTitle {
     display: none;
   }
+
+  .hoverBar { }
+
 }
 
 @media (min-width: 768px) {
-
+  .hoverBar {
+    width: $progress-bar-width * 2;
+    transform: translateX(15px);
+  }
 }
