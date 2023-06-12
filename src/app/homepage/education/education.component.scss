@@ -1,0 +1,28 @@
+.academy-container {
+  margin-left: 10%;
+  margin-right: 10%;
+  overflow: auto;
+  height: auto;
+
+  display: flex;
+
+  background-color: rgba(169, 169, 169, 0.2);
+  border-radius: 20px;
+}
+
+.academy-logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.academy-logo img {
+  max-height: 50%;
+  max-width: 50%;
+  display: block;
+}
+
+.academy-details {
+  flex: 8;
+}

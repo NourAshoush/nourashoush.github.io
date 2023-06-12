@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-homepage',
@@ -7,10 +7,12 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 })
 
 export class HomepageComponent implements OnInit, OnDestroy {
+  pageElements = ["tech_skills", "education"];
+
   ngOnInit() {
     window.addEventListener('scroll', this.updateProgressBar.bind(this));
     window.addEventListener('mousemove', this.handleBarHover.bind(this));
-    this.setCheckPointHeight();
+    this.setCheckPointHeights();
   }
 
   ngOnDestroy() {
@@ -18,22 +20,22 @@ export class HomepageComponent implements OnInit, OnDestroy {
     window.removeEventListener('mousemove', this.handleBarHover.bind(this));
   }
 
+  @HostListener('window:resize')
   private updateProgressBar(): void {
     const {scrollTop, scrollHeight} = document.documentElement;
-    const scrollPercent = `${scrollTop / (scrollHeight - window.innerHeight) * 100}%`;
+    const scrollPercent = `${scrollTop / (scrollHeight - window.innerHeight) * 100}%`; //scrollHeight - window.innerHeight
     const progressBar = document.querySelector('.progress-bar') as HTMLElement;
     progressBar.style.setProperty('--progress', scrollPercent);
   }
 
-  private setCheckPointHeight(): void {
+  @HostListener('window:resize')
+  private setCheckPointHeights(): void {
     const {scrollHeight} = document.documentElement;
-    const pageElements = document.querySelectorAll('.element');
-    const pageCheckpoints = document.querySelectorAll('.checkpoint');
 
-    for (let i = 0; i < pageElements.length; i++) {
-      const pageElement = pageElements[i] as HTMLElement;
-      const equivCheckpoint = pageCheckpoints[i] as HTMLElement;
-      const heightPercent = `${(pageElement.offsetTop / (scrollHeight - window.innerHeight) * 100) - 1}%`;
+    for (let i = 0; i < this.pageElements.length; i++) {
+      const pageElement = document.querySelector(`#${this.pageElements[i]}_element`) as HTMLElement;
+      const equivCheckpoint = document.querySelector(`#${this.pageElements[i]}_checkpoint`) as HTMLElement;
+      const heightPercent = `${(pageElement.offsetTop / (scrollHeight - window.innerHeight) * 100) - 1}%`; //scrollHeight - window.innerHeight
       equivCheckpoint.style.setProperty('--heightOffset', heightPercent);
     }
   }

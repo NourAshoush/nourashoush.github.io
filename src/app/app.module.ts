@@ -7,6 +7,7 @@ import { WelcomeMessageComponent } from './homepage/welcome-message/welcome-mess
 import { HomepageComponent } from './homepage/homepage.component';
 import { FooterComponent } from './footer/footer.component';
 import { TechSkillsComponent } from './homepage/tech-skills/tech-skills.component';
+import { EducationComponent } from './homepage/education/education.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TechSkillsComponent } from './homepage/tech-skills/tech-skills.componen
     WelcomeMessageComponent,
     HomepageComponent,
     FooterComponent,
-    TechSkillsComponent
+    TechSkillsComponent,
+    EducationComponent
   ],
   imports: [
     BrowserModule,

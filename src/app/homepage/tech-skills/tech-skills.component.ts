@@ -21,10 +21,10 @@ export class TechSkillsComponent implements OnInit, OnDestroy {
 
     for (let i = 0; i < reveals.length; i++) {
       const windowHeight = window.innerHeight;
-      const revealTop = (reveals[i] as HTMLElement).getBoundingClientRect().bottom;
+      const elementToReveal = (reveals[i] as HTMLElement).getBoundingClientRect();
       const revealPoint = 50;
 
-      if (revealTop < windowHeight - revealPoint) {
+      if (elementToReveal.bottom < windowHeight - revealPoint && elementToReveal.top < windowHeight - revealPoint) {
         (reveals[i] as HTMLElement).classList.add('active');
       } else {
         (reveals[i] as HTMLElement).classList.remove('active');

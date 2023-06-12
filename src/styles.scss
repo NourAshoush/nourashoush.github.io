@@ -36,8 +36,22 @@ h1, h2, h3, p, span {
   display: none;
 }
 
-.spacing {
-  height: 30%;
+.double-space {
+  display: block;
+  position: static;
+  height: 35%;
+  width: 100%;
+}
+
+.single-space {
+  display: block;
+  position: static;
+  height: 15%;
+  width: 100%;
+}
+
+.pad-left {
+  padding-left: 10%;
 }
 
 .unselectable {
@@ -56,4 +70,69 @@ h1, h2, h3, p, span {
 
 .reveal.active {
   opacity: 1;
+}
+
+.icons-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+}
+
+.icon {
+  font-size: 3rem;
+  padding: 0 13px 13px;
+  transition: all 0.3s ease;
+  overflow-wrap: normal;
+
+  &:hover {
+    opacity: 90%;
+    scale: 120%;
+    padding: 0 20px 13px;
+    filter: drop-shadow(2px 3px 3px rgba(0, 0, 0, 0.3));
+  }
+}
+
+.icon .iconText {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 5px;
+  border-radius: 6px;
+
+  bottom: 120%;
+  left: 50%;
+  margin-left: -60px;
+
+  transition: all 0.3s ease;
+}
+
+.iconText {
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+.iconTextContent {
+  font-size: 0.7rem;
+}
+
+.icon:hover .iconText {
+  opacity: 1;
+  visibility: visible;
+}
+
+.icon .iconText::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
 }
