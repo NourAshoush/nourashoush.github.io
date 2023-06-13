@@ -35,7 +35,7 @@ h1, h2, h3, p, span {
   @extend .unselectable;
   display: block;
   position: static;
-  height: 35%;
+  height: 45%;
   width: 100%;
 }
 
@@ -43,7 +43,7 @@ h1, h2, h3, p, span {
   @extend .unselectable;
   display: block;
   position: static;
-  height: 15%;
+  height: 5%;
   width: 100%;
 }
 
@@ -83,6 +83,8 @@ h1, h2, h3, p, span {
   padding: 0 13px 13px;
   transition: all 0.3s ease;
   overflow-wrap: normal;
+  height: 3rem;
+  width: 3rem;
 
   &:hover {
     opacity: 90%;
