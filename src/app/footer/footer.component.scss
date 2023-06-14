@@ -13,8 +13,14 @@ i.fab, i.fas {
 	padding: 0 10px;
 }
 
-.footer_socials {
+.footer-socials {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.footer-text {
+  //font-style: italic;
+  font-size: medium;
+  text-align: center;
 }

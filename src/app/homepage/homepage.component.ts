@@ -23,6 +23,12 @@ export class HomepageComponent implements OnInit, OnDestroy {
     window.removeEventListener('scroll', this.reveal);
   }
 
+  clearURL(): void {
+    setTimeout(() => {
+      history.replaceState('', document.title, window.location.origin + window.location.pathname + window.location.search);
+    }, 5);
+  }
+
   @HostListener('document:fullscreenchange')
   @HostListener('window:resize')
   private updateProgressBar(): void {
