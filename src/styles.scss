@@ -86,6 +86,11 @@ h1, h2, h3, p, span {
   height: 3rem;
   width: 3rem;
 
+  & svg {
+    height: 3rem;
+    width: 3rem;
+  }
+
   &:hover {
     opacity: 90%;
     scale: 120%;

@@ -5,7 +5,7 @@ $progress-bar-width: 6px;
   width: $progress-bar-width;
   height: 100%;
   background-color: rgba(128, 128, 128, 0.4);
-  left: 0;
+  right: 0;
   transition: width 0.3s ease, transform 0.3s ease;
 }
 
@@ -15,19 +15,20 @@ $progress-bar-width: 6px;
   width: $progress-bar-width;
   height: var(--progress);
   background-color: black;
-  left: 0;
+  right: 0;
   border-radius: 0 0 calc($progress-bar-width / 2) calc($progress-bar-width / 2);
 
   transition: width 0.3s ease, transform 0.3s ease;
 }
 
 .checkpoint {
+  @extend .unselectable !optional;
   position: fixed;
   width: $progress-bar-width - 2;
   height: $progress-bar-width - 2;
   background-color: white;
   border: black solid 1px;
-  left: 0;
+  right: 0;
   border-radius: 50%;
 
   transition: all 0.3s ease;
@@ -39,7 +40,7 @@ $progress-bar-width: 6px;
   &.hoverPoint {
     width: ($progress-bar-width - 2) * 3;
     height: ($progress-bar-width - 2) * 3;
-    left: 15px - ($progress-bar-width - 5);
+    right: 15px - ($progress-bar-width - 5);
     box-shadow: 0 0 0 2px black;
   }
 }
@@ -56,7 +57,7 @@ $progress-bar-width: 6px;
   border-radius: 6px;
 
   top: -90%;
-  left: 180%;
+  right: 180%;
 
   transition: all 0.3s ease;
 }
@@ -86,6 +87,8 @@ $progress-bar-width: 6px;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+  color: black;
 }
 
 .down-arrow {
@@ -136,6 +139,6 @@ $progress-bar-width: 6px;
 @media (min-width: 768px) {
   .hoverBar {
     width: $progress-bar-width * 2;
-    transform: translateX(15px);
+    transform: translateX(-15px);
   }
 }
