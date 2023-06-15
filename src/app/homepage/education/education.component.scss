@@ -1,9 +1,6 @@
 .academy-container {
   margin-left: 10%;
   margin-right: 10%;
-  overflow: auto;
-  height: auto;
-  display: flex;
 
   background-color: rgb(243, 243, 243);
   border-radius: 20px;
@@ -16,19 +13,46 @@
   }
 }
 
-.academy-logo {
+.academy-default {
+  overflow: auto;
+  height: auto;
+  display: flex;
+}
+
+.academy-images {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.academy-logo img {
-  max-height: 50%;
-  max-width: 50%;
-  display: block;
+  transition: max-height 0.5s ease;
+
+  & img {
+    max-height: 50%;
+    max-width: 50%;
+    display: block;
+  }
+
+  & i:hover {
+    cursor: pointer;
+  }
 }
 
 .academy-details {
   flex: 8;
+}
+
+.academy-modules {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease;
+}
+
+.show-courses {
+  max-height: fit-content;
+}
+
+#show-arrow {
+  transition: transform 0.5s ease;
+  transform: rotate(0deg);
 }
