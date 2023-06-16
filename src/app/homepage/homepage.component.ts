@@ -92,7 +92,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
       const elementToReveal = (reveals[i] as HTMLElement).getBoundingClientRect();
       const revealPoint = 100;
 
-      if (elementToReveal.top < windowHeight - revealPoint) {
+      if (elementToReveal.top < windowHeight - revealPoint) { // && elementToReveal.bottom > windowHeight - (windowHeight - revealPoint)
         (reveals[i] as HTMLElement).classList.add('active');
       } else {
         (reveals[i] as HTMLElement).classList.remove('active');
