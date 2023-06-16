@@ -46,6 +46,43 @@
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.5s ease;
+
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+
+  & > * {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  & p {
+    margin: 0.2rem 0;
+
+    &:hover {
+    }
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+
+  background-color: #f3f3f3ff;
+  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+  padding: 0.4rem;
+
+
+  &:hover {
+    background-color: #e0e0e0;
+    scale: 103%;
+  }
+}
+
+.icon-container {
+  width: 20px;
+  margin-right: 20px;
 }
 
 .show-courses {
@@ -55,4 +92,15 @@
 #show-arrow {
   transition: transform 0.5s ease;
   transform: rotate(0deg);
+}
+
+@media (min-width:768px) {
+  .academy-modules {
+    flex-direction: row;
+
+    & > * {
+      width: 50%;
+
+    }
+  }
 }
