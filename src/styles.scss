@@ -5,6 +5,8 @@ div {
 :root {
   --main-font: black;
   --background: white;
+  --invert-font: white;
+  --invert-background: #262626;
   --container: rgb(243, 243, 243);
   --inner-container: rgb(224, 224, 224);
   --icon-font: white;
@@ -15,6 +17,8 @@ div {
 .light-mode {
   --main-font: black;
   --background: white;
+  --invert-font: white;
+  --invert-background: #262626;
   --container: rgb(243, 243, 243);
   --inner-container: rgb(224, 224, 224);
   --icon-font: white;
@@ -25,6 +29,8 @@ div {
 .dark-mode { //document.documentElement.classList.toggle('dark-mode');
   --main-font: white;
   --background: #262626;
+  --invert-font: #262626;
+  --invert-background: white;
   --container: rgb(84, 84, 84);
   --inner-container: rgb(65, 65, 65);
   --icon-font: black;
@@ -187,4 +193,8 @@ h1, h2, h3, p, span {
   border-width: 5px;
   border-style: solid;
   border-color: var(--icon-label) transparent transparent transparent;
+}
+
+.fas, .fab {
+  color: var(--main-font);
 }

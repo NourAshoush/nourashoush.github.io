@@ -10,6 +10,7 @@ import { TechSkillsComponent } from './homepage/tech-skills/tech-skills.componen
 import { EducationComponent } from './homepage/education/education.component';
 import { ProjectsComponent } from './homepage/projects/projects.component';
 import { TeamProjectComponent } from './modulePages/team-project/team-project.component';
+import { NavbarComponent } from './layouts/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TeamProjectComponent } from './modulePages/team-project/team-project.co
     TechSkillsComponent,
     EducationComponent,
     ProjectsComponent,
-    TeamProjectComponent
+    TeamProjectComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

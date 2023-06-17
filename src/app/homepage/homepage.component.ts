@@ -1,4 +1,5 @@
-import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -8,6 +9,9 @@ import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 
 export class HomepageComponent implements OnInit, OnDestroy {
   pageElements = ["tech_skills", "education", "projects"];
+  isDarkMode = document.documentElement.classList.contains('dark-mode');
+
+  constructor(private router: Router, private elementRef: ElementRef) { }
 
   ngOnInit() {
     window.addEventListener('scroll', this.updateProgressBar.bind(this));
@@ -54,16 +58,19 @@ export class HomepageComponent implements OnInit, OnDestroy {
   private handleBarHover(event: MouseEvent): void {
     const progressBarElement = document.querySelector('.progress-bar') as HTMLElement;
     const progressGhostElement = document.querySelector('.progress-bar-ghost') as HTMLElement;
+    const toggleThemeElement = document.querySelector('.theme-toggle') as HTMLElement;
     const rect = progressGhostElement.getBoundingClientRect();
-    const isInVicinity = Math.abs(event.clientX - rect.left) <= 30;
+    const isInVicinity = Math.abs(event.clientX - rect.left) <= 60;
 
     if (isInVicinity) {
       progressBarElement.classList.add('hoverBar');
       progressGhostElement.classList.add('hoverBar');
+      toggleThemeElement.classList.add('hoverToggle');
       this.addClassHoverPoint();
     } else {
       progressBarElement.classList.remove('hoverBar');
       progressGhostElement.classList.remove('hoverBar');
+      toggleThemeElement.classList.remove('hoverToggle');
       this.removeClassHoverPoint();
     }
   }
@@ -98,6 +105,15 @@ export class HomepageComponent implements OnInit, OnDestroy {
         (reveals[i] as HTMLElement).classList.remove('active');
       }
     }
+  }
+
+  public scrollToElement(elementId: string): void {
+    this.elementRef.nativeElement.querySelector(`#${elementId}`).scrollIntoView();
+  }
+
+  public toggleDarkMode() {
+    document.documentElement.classList.toggle('dark-mode');
+    this.isDarkMode = !this.isDarkMode;
   }
 
 }

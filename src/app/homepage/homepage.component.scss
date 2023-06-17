@@ -21,6 +21,35 @@ $progress-bar-width: 6px;
   transition: width 0.3s ease, transform 0.3s ease;
 }
 
+.theme-toggle {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: ($progress-bar-width+1) * 7;
+  top: -30px;
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+  border-radius: 20px;
+  background-color: var(--invert-background);
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  & i {
+    color: var(--invert-font);
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 5px var(--invert-background);
+  }
+}
+
+.hoverToggle {
+  transform: translateY(40px);
+}
+
 .checkpoint {
   @extend .unselectable !optional;
   position: fixed;
@@ -30,6 +59,7 @@ $progress-bar-width: 6px;
   border: var(--icon-label) solid 1px;
   right: 0;
   border-radius: 50%;
+  cursor: pointer;
 
   transition: all 0.3s ease;
 
@@ -89,6 +119,7 @@ $progress-bar-width: 6px;
   align-items: center;
   text-decoration: none;
   color: var(--main-font);
+  cursor: pointer;
 }
 
 .down-arrow {
