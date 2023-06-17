@@ -2,14 +2,14 @@
   margin-left: 10%;
   margin-right: 10%;
 
-  background-color: rgb(243, 243, 243);
+  background-color: var(--container);
   border-radius: 20px;
 
   transition: all 0.3s ease;
 
   &:hover {
-    scale: 105%;
-    filter: drop-shadow(1px 2px 4px rgba(0, 0, 0, 0.2));
+    scale: 102%;
+    filter: drop-shadow(1px 2px 4px var(--drop-shadow));
   }
 }
 
@@ -65,22 +65,22 @@
   display: flex;
   align-items: center;
 
-  background-color: #f3f3f3ff;
+  background-color: var(--container);
   transition: all 0.3s ease;
   border-radius: 0.5rem;
   padding: 0.2rem 0.8rem;
   text-decoration: none;
-  color: black;
+  color: var(--main-font);
   cursor: pointer;
 
   &:hover {
-    background-color: #e0e0e0;
+    background-color: var(--inner-container);
     scale: 103%;
   }
 
-  &:hover .icon-container i:before {
-    animation: blink 0.4s forwards;
-  }
+  //&:hover .icon-container i:before {
+  //  //animation: blink 0.4s forwards;
+  //}
 }
 
 @keyframes blink {

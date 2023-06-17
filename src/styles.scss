@@ -2,10 +2,42 @@ div {
   border: red dashed 0px;
 }
 
+:root {
+  --main-font: black;
+  --background: white;
+  --container: rgb(243, 243, 243);
+  --inner-container: rgb(224, 224, 224);
+  --icon-font: white;
+  --icon-label: black;
+  --drop-shadow: rgba(0, 0, 0, 0.3);
+}
+
+.light-mode {
+  --main-font: black;
+  --background: white;
+  --container: rgb(243, 243, 243);
+  --inner-container: rgb(224, 224, 224);
+  --icon-font: white;
+  --icon-label: black;
+  --drop-shadow: rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode { //document.documentElement.classList.toggle('dark-mode');
+  --main-font: white;
+  --background: #262626;
+  --container: rgb(84, 84, 84);
+  --inner-container: rgb(65, 65, 65);
+  --icon-font: black;
+  --icon-label: white;
+  --drop-shadow: rgba(255, 255, 255, 0.3);
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 1.4rem;
   line-height: 1.5rem;
+  color: var(--main-font);
+  background-color: var(--background);
 }
 
 html, body {
@@ -14,13 +46,14 @@ html, body {
   margin: 0;
 
   scroll-behavior: smooth;
-
 }
 
 h1, h2, h3, p, span {
   font-weight: 300;
   @extend .unselectable;
 }
+
+
 
 .bold {
   font-weight: 500;
@@ -109,7 +142,7 @@ h1, h2, h3, p, span {
     opacity: 90%;
     scale: 120%;
     padding: 0 20px 13px;
-    filter: drop-shadow(2px 3px 3px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(2px 3px 3px var(--drop-shadow));
   }
 }
 
@@ -118,8 +151,8 @@ h1, h2, h3, p, span {
   opacity: 0;
   visibility: hidden;
   width: 120px;
-  background-color: black;
-  color: #fff;
+  background-color: var(--icon-label);
+  color: var(--icon-font);
   text-align: center;
   padding: 5px 5px;
   border-radius: 6px;
@@ -153,5 +186,5 @@ h1, h2, h3, p, span {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: black transparent transparent transparent;
+  border-color: var(--icon-label) transparent transparent transparent;
 }

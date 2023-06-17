@@ -14,7 +14,7 @@ $progress-bar-width: 6px;
   position: fixed;
   width: $progress-bar-width;
   height: var(--progress);
-  background-color: black;
+  background-color: var(--icon-label);
   right: 0;
   border-radius: 0 0 calc($progress-bar-width / 2) calc($progress-bar-width / 2);
 
@@ -26,22 +26,22 @@ $progress-bar-width: 6px;
   position: fixed;
   width: $progress-bar-width - 2;
   height: $progress-bar-width - 2;
-  background-color: white;
-  border: black solid 1px;
+  background-color: var(--background);
+  border: var(--icon-label) solid 1px;
   right: 0;
   border-radius: 50%;
 
   transition: all 0.3s ease;
 
   &:hover {
-    box-shadow: 0 0 0 4px black !important;
+    box-shadow: 0 0 0 4px var(--icon-label) !important;
   }
 
   &.hoverPoint {
     width: ($progress-bar-width - 2) * 3;
     height: ($progress-bar-width - 2) * 3;
     right: 15px - ($progress-bar-width - 5);
-    box-shadow: 0 0 0 2px black;
+    box-shadow: 0 0 0 2px var(--icon-label);
   }
 }
 
@@ -50,8 +50,8 @@ $progress-bar-width: 6px;
   opacity: 0;
   visibility: hidden;
   width: 120px;
-  background-color: black;
-  color: #fff;
+  background-color: var(--icon-label);
+  color: var(--icon-font);
   text-align: center;
   padding: 5px 5px;
   border-radius: 6px;
@@ -88,7 +88,7 @@ $progress-bar-width: 6px;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: black;
+  color: var(--main-font);
 }
 
 .down-arrow {
