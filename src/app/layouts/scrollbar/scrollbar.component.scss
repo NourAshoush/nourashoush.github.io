@@ -1,0 +1,131 @@
+$progress-bar-width: 6px;
+
+.progress-bar-ghost {
+  position: fixed;
+  width: $progress-bar-width;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.4);
+  left: 0;
+  transition: width 0.3s ease, transform 0.3s ease;
+}
+
+.progress-bar {
+  --progress: 0;
+  position: fixed;
+  width: $progress-bar-width;
+  height: var(--progress);
+  background-color: var(--icon-label);
+  left: 0;
+  border-radius: 0 0 calc($progress-bar-width / 2) calc($progress-bar-width / 2);
+
+  transition: width 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: ($progress-bar-width+1) * 7;
+  top: -30px;
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+  border-radius: 25%;
+  background-color: var(--invert-background);
+  cursor: pointer;
+  //box-shadow: 0 0 0 1px var(--invert-background);
+
+  transition: all 0.3s ease, box-shadow 0.5s ease, border-radius 0.5s ease, transform 0.5s ease;
+
+  & i {
+    color: var(--invert-font);
+  }
+}
+
+.toggleTransition {
+  box-shadow: 0 0 0 max(100vh, 100vw) var(--invert-background);
+  transform: translateY(0) !important;
+}
+
+.hoverToggle {
+  transform: translateY(40px);
+}
+
+.checkpoint {
+  @extend .unselectable !optional;
+  position: fixed;
+  width: $progress-bar-width - 2;
+  height: $progress-bar-width - 2;
+  background-color: var(--background);
+  border: var(--icon-label) solid 1px;
+  left: 0;
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 0 4px var(--icon-label) !important;
+  }
+
+  &.hoverPoint {
+    width: ($progress-bar-width - 2) * 3;
+    height: ($progress-bar-width - 2) * 3;
+    left: 15px - ($progress-bar-width - 5);
+    box-shadow: 0 0 0 2px var(--icon-label);
+  }
+}
+
+.checkpoint .sectionTitle {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--icon-label);
+  color: var(--icon-font);
+  text-align: center;
+  padding: 5px 5px;
+  border-radius: 6px;
+
+  top: -90%;
+  left: 180%;
+
+  transition: all 0.3s ease;
+}
+
+.checkpoint:hover .sectionTitle {
+  opacity: 1;
+  visibility: visible;
+}
+
+#tech_skills_checkpoint {
+  --heightOffset: 0;
+  top: var(--heightOffset);
+}
+
+#education_checkpoint {
+  --heightOffset: 0;
+  top: var(--heightOffset);
+}
+
+#projects_checkpoint {
+  --heightOffset: 0;
+  top: var(--heightOffset);
+}
+
+@media (max-width: 767px) {
+  .checkpoint, .sectionTitle {
+    display: none;
+  }
+
+  .hoverBar { }
+
+}
+
+@media (min-width: 768px) {
+  .hoverBar {
+    width: $progress-bar-width * 2;
+    transform: translateX(15px);
+  }
+}

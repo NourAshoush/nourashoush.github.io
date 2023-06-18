@@ -1,22 +1,6 @@
 <!--<app-navbar></app-navbar>-->
 
-<div class="theme-toggle">
-  <i class="fas" [ngClass]="{'fa-sun': isDarkMode, 'fa-moon': !isDarkMode}" (click)="toggleDarkMode()"></i>
-</div>
-<div class="progress-bar-ghost"></div>
-<div class="progress-bar"></div>
-
-<a id="tech_skills_checkpoint" class="checkpoint" (click)="scrollToElement('tech_skills_element')">
-  <span class="sectionTitle unselectable">Tech Skills</span>
-</a>
-
-<a id="education_checkpoint" class="checkpoint" (click)="scrollToElement('education_element')">
-  <span class="sectionTitle unselectable">Education</span>
-</a>
-
-<a id="projects_checkpoint" class="checkpoint" (click)="scrollToElement('projects_element')">
-  <span class="sectionTitle unselectable">Projects</span>
-</a>
+<app-scrollbar></app-scrollbar>
 
 <app-welcome-message></app-welcome-message>
 <a class="go_down" (click)="scrollToElement('tech_skills_element')"> <div class="down-arrow"></div> </a>

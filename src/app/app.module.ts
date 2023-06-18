@@ -11,6 +11,7 @@ import { EducationComponent } from './homepage/education/education.component';
 import { ProjectsComponent } from './homepage/projects/projects.component';
 import { TeamProjectComponent } from './modulePages/team-project/team-project.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
+import { ScrollbarComponent } from './layouts/scrollbar/scrollbar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NavbarComponent } from './layouts/navbar/navbar.component';
     EducationComponent,
     ProjectsComponent,
     TeamProjectComponent,
-    NavbarComponent
+    NavbarComponent,
+    ScrollbarComponent
   ],
   imports: [
     BrowserModule,
