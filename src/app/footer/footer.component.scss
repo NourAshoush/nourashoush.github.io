@@ -5,11 +5,10 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #f5f5f5;
+  background: var(--container);
 }
 
 i.fab, i.fas {
-  color: black;
   font-size: 2rem;
   padding: 0 10px;
 }

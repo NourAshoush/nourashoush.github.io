@@ -112,8 +112,12 @@ export class HomepageComponent implements OnInit, OnDestroy {
   }
 
   public toggleDarkMode() {
-    document.documentElement.classList.toggle('dark-mode');
-    this.isDarkMode = !this.isDarkMode;
+    (document.querySelector('.theme-toggle') as HTMLElement).classList.add('toggleTransition');
+    setTimeout(() => {
+      document.documentElement.classList.toggle('dark-mode');
+      this.isDarkMode = !this.isDarkMode;
+      (document.querySelector('.theme-toggle') as HTMLElement).classList.remove('toggleTransition')
+  }, 500);
   }
 
 }
