@@ -1,5 +1,5 @@
-<div class="theme-toggle">
-  <i class="fas" [ngClass]="{'fa-sun': isDarkMode, 'fa-moon': !isDarkMode}" (click)="toggleDarkMode()"></i>
+<div class="theme-toggle" (click)="toggleDarkMode()">
+  <i class="fas" [ngClass]="{'fa-sun': isDarkMode, 'fa-moon': !isDarkMode}"></i>
 </div>
 <div class="progress-bar-ghost"></div>
 <div class="progress-bar"></div>
