@@ -1,3 +1,41 @@
+.guide {
+  position: absolute;
+  color: var(--inner-container);
+  width: 10%;
+  top: calc(100vh - 50%);
+  left: 4%;
+  animation: coastInfinite 1.5s infinite;
+  cursor: default;
+
+  &:hover + .guide-hover {
+    opacity: 1;
+  }
+}
+
+.guide-hover {
+  position: absolute;
+  width: 60px;
+  height: 100%;
+  background-image: linear-gradient(to right, rgba(100, 100, 100, 0.5), rgba(100, 100, 100, 0));
+  border-radius: 0 10px 10px 0;
+  z-index: -1;
+  opacity: 0;
+
+  transition: all 0.3s ease;
+}
+
+@keyframes coastInfinite {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .go_down {
   height: 10%;
   display: flex;

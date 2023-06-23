@@ -12,6 +12,7 @@ import { ProjectsComponent } from './homepage/projects/projects.component';
 import { TeamProjectComponent } from './modulePages/team-project/team-project.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { ScrollbarComponent } from './layouts/scrollbar/scrollbar.component';
+import { AboutComponent } from './homepage/about/about.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ScrollbarComponent } from './layouts/scrollbar/scrollbar.component';
     ProjectsComponent,
     TeamProjectComponent,
     NavbarComponent,
-    ScrollbarComponent
+    ScrollbarComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

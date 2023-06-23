@@ -1,9 +1,14 @@
 <!--<app-navbar></app-navbar>-->
 
 <app-scrollbar></app-scrollbar>
+<i class="fas fa-arrow-left guide"><span> h o v e r</span></i>
+<div class="guide-hover"></div>
 
 <app-welcome-message></app-welcome-message>
-<a class="go_down" (click)="scrollToElement('tech_skills_element')"> <div class="down-arrow"></div> </a>
+<a class="go_down" (click)="scrollToElement('about_element')"> <div class="down-arrow"></div> </a>
+
+<div class="double-space"></div>
+<app-about id="about_element"></app-about>
 
 <div class="double-space"></div>
 <app-tech-skills id="tech_skills_element"></app-tech-skills>

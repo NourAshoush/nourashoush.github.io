@@ -99,6 +99,11 @@ $progress-bar-width: 6px;
   visibility: visible;
 }
 
+#about_checkpoint {
+  --heightOffset: 0;
+  top: var(--heightOffset);
+}
+
 #tech_skills_checkpoint {
   --heightOffset: 0;
   top: var(--heightOffset);

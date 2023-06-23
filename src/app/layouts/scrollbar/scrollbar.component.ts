@@ -6,7 +6,7 @@ import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
   styleUrls: ['./scrollbar.component.scss']
 })
 export class ScrollbarComponent implements OnInit, OnDestroy {
-  pageElements = ["tech_skills", "education", "projects"];
+  pageElements = ["about", "tech_skills", "education", "projects"];
   isDarkMode = document.documentElement.classList.contains('dark-mode');
 
   ngOnInit() {
