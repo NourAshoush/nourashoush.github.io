@@ -1,6 +1,47 @@
-.navbar {
+.nav-button {
   position: fixed;
-  top: 0;
-  right: 10%;
+  left: 10px;
+  top: 10px;
+  font-size: 1.5rem;
+}
+
+.overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  overflow-x: hidden;
+  background-color: var(--background);
+
+  transition: all 0.2s ease;
+}
+
+.hide {
+  display: none;
+}
+
+.overlay-clsbttn {
+  position: fixed;
+  color: var(--main-font);
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+}
+
+.overlay-content {
+  position: relative;
+  text-align: center;
   display: flex;
+  flex-direction: column;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 2rem;
+  color: var(--main-font);
+  display: block;
+  transition: 0.3s;
 }

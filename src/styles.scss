@@ -40,8 +40,6 @@ div {
 
 body {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.4rem;
-  line-height: 1.5rem;
   color: var(--main-font);
   background-color: var(--background);
 }
@@ -82,14 +80,6 @@ h1, h2, h3, p, span {
   position: static;
   height: 5%;
   width: 100%;
-}
-
-.pad-left {
-  padding-left: 10%;
-}
-
-.pad-right {
-  padding-right: 10%;
 }
 
 .unselectable {
@@ -195,4 +185,39 @@ h1, h2, h3, p, span {
 
 .fas, .fab {
   color: var(--main-font);
+}
+
+@media (max-width: 768px) { // mobile screen
+  .hideOnPhone {
+    display: none !important;
+  }
+
+  .hideOnLaptop { }
+
+  body {
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+
+  .pad-left, .pad-right {
+    padding-left: 2%;
+  }
+
+}
+
+@media (min-width: 769px) { // laptop screen
+  .hideOnLaptop {
+    display: none !important;
+  }
+
+  .hideOnPhone { }
+
+  body {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+
+  .pad-left, .pad-right {
+    padding-left: 10%;
+  }
 }

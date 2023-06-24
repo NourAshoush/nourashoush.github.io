@@ -1,3 +1,15 @@
-<div class="navbar">
-  <i class="fas fa-bars"></i>
+<div class="nav-button" (click)="showNav()">
+  <i class="fa-solid fa-bars"></i>
+</div>
+
+<div class="overlay hide">
+
+  <i class="fas fa-xmark overlay-clsbttn" (click)="hideNav()"></i>
+
+  <div class="overlay-content">
+    <a (click)="hideNav(); scrollToElement('about_element')">About Me</a> <br>
+    <a (click)="hideNav(); scrollToElement('tech_skills_element')">Tech Skills</a> <br>
+    <a (click)="hideNav(); scrollToElement('education_element')">Education</a> <br>
+    <a (click)="hideNav(); scrollToElement('projects_element')">Projects</a> <br>
+  </div>
 </div>
