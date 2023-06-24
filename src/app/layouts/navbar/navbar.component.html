@@ -1,15 +1,23 @@
-<div class="nav-button" (click)="showNav()">
+<div class="nav-button phoneSize" (click)="showNav()">
   <i class="fa-solid fa-bars"></i>
 </div>
 
 <div class="overlay hide">
 
-  <i class="fas fa-xmark overlay-clsbttn" (click)="hideNav()"></i>
+  <i class="fas fa-xmark overlay-clsbttn phoneSize" (click)="hideNav()"></i>
 
   <div class="overlay-content">
     <a (click)="hideNav(); scrollToElement('about_element')">About Me</a> <br>
     <a (click)="hideNav(); scrollToElement('tech_skills_element')">Tech Skills</a> <br>
     <a (click)="hideNav(); scrollToElement('education_element')">Education</a> <br>
     <a (click)="hideNav(); scrollToElement('projects_element')">Projects</a> <br>
+
+    <div style="margin-top: 10%" class="theme-toggle" (click)="toggleDarkMode()">
+      <i class="phoneSize fas" [ngClass]="{'fa-sun': isDarkMode, 'fa-moon': !isDarkMode}">
+        <span *ngIf="isDarkMode"> Toggle Light Mode</span>
+        <span *ngIf="!isDarkMode"> Toggle Dark Mode</span>
+      </i>
+    </div>
+
   </div>
 </div>

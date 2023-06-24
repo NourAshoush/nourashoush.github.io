@@ -2,7 +2,6 @@
   position: fixed;
   left: 10px;
   top: 10px;
-  font-size: 1.5rem;
 }
 
 .overlay {
@@ -25,7 +24,6 @@
   color: var(--main-font);
   top: 10px;
   right: 10px;
-  font-size: 1.5rem;
 }
 
 .overlay-content {
@@ -44,4 +42,8 @@
   color: var(--main-font);
   display: block;
   transition: 0.3s;
+}
+
+.phoneSize {
+  font-size: 1.5rem;
 }

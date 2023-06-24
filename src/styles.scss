@@ -199,8 +199,12 @@ h1, h2, h3, p, span {
     line-height: 1.3rem;
   }
 
-  .pad-left, .pad-right {
+  .pad-left {
     padding-left: 2%;
+  }
+
+  .pad-right {
+    padding-right: 2%;
   }
 
 }
@@ -217,7 +221,11 @@ h1, h2, h3, p, span {
     line-height: 1.6rem;
   }
 
-  .pad-left, .pad-right {
+  .pad-left {
     padding-left: 10%;
+  }
+
+  .pad-right {
+    padding-right: 10%;
   }
 }
